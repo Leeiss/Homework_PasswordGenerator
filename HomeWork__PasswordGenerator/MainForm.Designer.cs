@@ -78,7 +78,7 @@
             // 
             this.generate_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(191)))), ((int)(((byte)(231)))));
             this.generate_btn.Font = new System.Drawing.Font("Script MT Bold", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generate_btn.Location = new System.Drawing.Point(526, 614);
+            this.generate_btn.Location = new System.Drawing.Point(541, 599);
             this.generate_btn.Name = "generate_btn";
             this.generate_btn.Size = new System.Drawing.Size(437, 125);
             this.generate_btn.TabIndex = 2;
@@ -103,9 +103,9 @@
             this.generate_panel.Controls.Add(this.lengthUpDown);
             this.generate_panel.Controls.Add(this.passwordBox);
             this.generate_panel.Controls.Add(this.show_btn);
-            this.generate_panel.Location = new System.Drawing.Point(0, 409);
+            this.generate_panel.Location = new System.Drawing.Point(0, 390);
             this.generate_panel.Name = "generate_panel";
-            this.generate_panel.Size = new System.Drawing.Size(1524, 856);
+            this.generate_panel.Size = new System.Drawing.Size(1524, 875);
             this.generate_panel.TabIndex = 3;
             this.generate_panel.Visible = false;
             // 
