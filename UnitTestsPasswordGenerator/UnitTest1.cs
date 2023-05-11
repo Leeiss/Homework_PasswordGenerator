@@ -119,7 +119,6 @@ namespace UnitTestsPasswordGenerator
             string password = generator.GeneratePassword(1, "0");
             Assert.AreEqual(1, password.Length);
         }
-
         public void TestGeneratePassword_OverLenght()
         {
             MainForm generator = new MainForm();
