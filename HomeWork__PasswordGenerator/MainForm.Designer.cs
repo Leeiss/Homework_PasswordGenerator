@@ -31,9 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.logo_picture = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.upperpanel = new System.Windows.Forms.Panel();
             this.generate_btn = new System.Windows.Forms.Button();
             this.generate_panel = new System.Windows.Forms.Panel();
+            this.hintBox = new System.Windows.Forms.RichTextBox();
+            this.labelHint = new System.Windows.Forms.Label();
             this.show_btn = new System.Windows.Forms.PictureBox();
             this.save_password_btn = new System.Windows.Forms.Button();
             this.save_btn = new System.Windows.Forms.PictureBox();
@@ -63,11 +65,10 @@
             this.generarionForNewUserBtn = new System.Windows.Forms.Label();
             this.hints = new System.Windows.Forms.ToolTip(this.components);
             this.back_btn = new System.Windows.Forms.PictureBox();
+            this.back_btn1 = new System.Windows.Forms.PictureBox();
             this.show_btn1 = new System.Windows.Forms.PictureBox();
             this.hide_btn1 = new System.Windows.Forms.PictureBox();
-            this.labelHint = new System.Windows.Forms.Label();
-            this.hintBox = new System.Windows.Forms.RichTextBox();
-            this.back_btn1 = new System.Windows.Forms.PictureBox();
+            this.controlPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.logo_picture)).BeginInit();
             this.generate_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.show_btn)).BeginInit();
@@ -76,34 +77,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.lengthUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hide_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.back_btn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back_btn1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.show_btn1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hide_btn1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.back_btn1)).BeginInit();
             this.SuspendLayout();
             // 
             // logo_picture
             // 
             this.logo_picture.Image = ((System.Drawing.Image)(resources.GetObject("logo_picture.Image")));
-            this.logo_picture.Location = new System.Drawing.Point(304, -32);
+            this.logo_picture.Location = new System.Drawing.Point(313, -9);
             this.logo_picture.Name = "logo_picture";
             this.logo_picture.Size = new System.Drawing.Size(937, 553);
             this.logo_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo_picture.TabIndex = 0;
             this.logo_picture.TabStop = false;
             // 
-            // panel1
+            // upperpanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(191)))), ((int)(((byte)(231)))));
-            this.panel1.Location = new System.Drawing.Point(0, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1591, 19);
-            this.panel1.TabIndex = 1;
+            this.upperpanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.upperpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(191)))), ((int)(((byte)(231)))));
+            this.upperpanel.Location = new System.Drawing.Point(0, 12);
+            this.upperpanel.Name = "upperpanel";
+            this.upperpanel.Size = new System.Drawing.Size(1591, 19);
+            this.upperpanel.TabIndex = 1;
             // 
             // generate_btn
             // 
             this.generate_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(191)))), ((int)(((byte)(231)))));
             this.generate_btn.Font = new System.Drawing.Font("Script MT Bold", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generate_btn.Location = new System.Drawing.Point(524, 847);
+            this.generate_btn.Location = new System.Drawing.Point(516, 901);
             this.generate_btn.Name = "generate_btn";
             this.generate_btn.Size = new System.Drawing.Size(490, 125);
             this.generate_btn.TabIndex = 2;
@@ -113,6 +116,9 @@
             // 
             // generate_panel
             // 
+            this.generate_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.generate_panel.Controls.Add(this.hintBox);
             this.generate_panel.Controls.Add(this.labelHint);
             this.generate_panel.Controls.Add(this.show_btn);
@@ -132,14 +138,43 @@
             this.generate_panel.Controls.Add(this.lengthUpDown);
             this.generate_panel.Controls.Add(this.passwordBox);
             this.generate_panel.Controls.Add(this.hide_btn);
-            this.generate_panel.Location = new System.Drawing.Point(0, 410);
+            this.generate_panel.Location = new System.Drawing.Point(0, 428);
             this.generate_panel.Name = "generate_panel";
-            this.generate_panel.Size = new System.Drawing.Size(1524, 930);
+            this.generate_panel.Size = new System.Drawing.Size(1524, 910);
             this.generate_panel.TabIndex = 3;
             this.generate_panel.Visible = false;
             // 
+            // hintBox
+            // 
+            this.hintBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.hintBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.hintBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.hintBox.Font = new System.Drawing.Font("XO Thames", 12F);
+            this.hintBox.Location = new System.Drawing.Point(416, 737);
+            this.hintBox.Name = "hintBox";
+            this.hintBox.ReadOnly = true;
+            this.hintBox.Size = new System.Drawing.Size(805, 86);
+            this.hintBox.TabIndex = 47;
+            this.hintBox.TabStop = false;
+            this.hintBox.Text = "";
+            this.hintBox.Visible = false;
+            // 
+            // labelHint
+            // 
+            this.labelHint.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelHint.AutoSize = true;
+            this.labelHint.Font = new System.Drawing.Font("XO Thames", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelHint.Location = new System.Drawing.Point(345, 698);
+            this.labelHint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelHint.Name = "labelHint";
+            this.labelHint.Size = new System.Drawing.Size(491, 36);
+            this.labelHint.TabIndex = 46;
+            this.labelHint.Text = "Подсказка для запомниная пароля:";
+            this.labelHint.Visible = false;
+            // 
             // show_btn
             // 
+            this.show_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.show_btn.Image = global::HomeWork__PasswordGenerator.Properties.Resources.ракрыть;
             this.show_btn.Location = new System.Drawing.Point(1098, 635);
             this.show_btn.Name = "show_btn";
@@ -152,6 +187,7 @@
             // 
             // save_password_btn
             // 
+            this.save_password_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.save_password_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(191)))), ((int)(((byte)(231)))));
             this.save_password_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.save_password_btn.FlatAppearance.BorderSize = 0;
@@ -169,6 +205,7 @@
             // 
             // save_btn
             // 
+            this.save_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.save_btn.Image = ((System.Drawing.Image)(resources.GetObject("save_btn.Image")));
             this.save_btn.Location = new System.Drawing.Point(1167, 639);
             this.save_btn.Name = "save_btn";
@@ -195,6 +232,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(191)))), ((int)(((byte)(231)))));
             this.panel2.Location = new System.Drawing.Point(379, 71);
             this.panel2.Name = "panel2";
@@ -215,6 +253,7 @@
             // 
             // generateBtn
             // 
+            this.generateBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.generateBtn.BackColor = System.Drawing.Color.Transparent;
             this.generateBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("generateBtn.BackgroundImage")));
             this.generateBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -232,6 +271,7 @@
             // 
             // numberCheckBox
             // 
+            this.numberCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.numberCheckBox.AutoSize = true;
             this.numberCheckBox.Font = new System.Drawing.Font("XO Thames", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.numberCheckBox.Location = new System.Drawing.Point(416, 310);
@@ -244,6 +284,7 @@
             // 
             // alphanumCheckBox
             // 
+            this.alphanumCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.alphanumCheckBox.AutoSize = true;
             this.alphanumCheckBox.Font = new System.Drawing.Font("XO Thames", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.alphanumCheckBox.Location = new System.Drawing.Point(416, 246);
@@ -256,6 +297,7 @@
             // 
             // ambiguousCheckBox
             // 
+            this.ambiguousCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ambiguousCheckBox.AutoSize = true;
             this.ambiguousCheckBox.Font = new System.Drawing.Font("XO Thames", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ambiguousCheckBox.Location = new System.Drawing.Point(416, 440);
@@ -268,6 +310,7 @@
             // 
             // similarCheckBox
             // 
+            this.similarCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.similarCheckBox.AutoSize = true;
             this.similarCheckBox.Font = new System.Drawing.Font("XO Thames", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.similarCheckBox.Location = new System.Drawing.Point(416, 377);
@@ -280,6 +323,7 @@
             // 
             // lowerCheckBox
             // 
+            this.lowerCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lowerCheckBox.AutoSize = true;
             this.lowerCheckBox.Font = new System.Drawing.Font("XO Thames", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lowerCheckBox.Location = new System.Drawing.Point(416, 184);
@@ -292,6 +336,7 @@
             // 
             // upperCheckBox
             // 
+            this.upperCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.upperCheckBox.AutoSize = true;
             this.upperCheckBox.Font = new System.Drawing.Font("XO Thames", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.upperCheckBox.Location = new System.Drawing.Point(416, 130);
@@ -304,6 +349,7 @@
             // 
             // lengthLabel
             // 
+            this.lengthLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lengthLabel.AutoSize = true;
             this.lengthLabel.Font = new System.Drawing.Font("XO Thames", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lengthLabel.Location = new System.Drawing.Point(451, 71);
@@ -315,6 +361,7 @@
             // 
             // lengthUpDown
             // 
+            this.lengthUpDown.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lengthUpDown.Font = new System.Drawing.Font("XO Thames", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lengthUpDown.Location = new System.Drawing.Point(603, 69);
             this.lengthUpDown.Margin = new System.Windows.Forms.Padding(4);
@@ -354,6 +401,7 @@
             // 
             // hide_btn
             // 
+            this.hide_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.hide_btn.Image = global::HomeWork__PasswordGenerator.Properties.Resources.скрыть;
             this.hide_btn.Location = new System.Drawing.Point(1098, 635);
             this.hide_btn.Name = "hide_btn";
@@ -370,7 +418,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.loginBox.BackColor = System.Drawing.SystemColors.MenuBar;
             this.loginBox.Font = new System.Drawing.Font("XO Thames", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loginBox.Location = new System.Drawing.Point(489, 527);
+            this.loginBox.Location = new System.Drawing.Point(481, 581);
             this.loginBox.MaxLength = 1000;
             this.loginBox.MinimumSize = new System.Drawing.Size(365, 29);
             this.loginBox.Name = "loginBox";
@@ -383,7 +431,7 @@
             this.labelLogin.AutoSize = true;
             this.labelLogin.Font = new System.Drawing.Font("XO Thames", 10F);
             this.labelLogin.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.labelLogin.Location = new System.Drawing.Point(728, 586);
+            this.labelLogin.Location = new System.Drawing.Point(720, 640);
             this.labelLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.Size = new System.Drawing.Size(80, 31);
@@ -395,7 +443,7 @@
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("XO Thames", 10F);
             this.labelPassword.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.labelPassword.Location = new System.Drawing.Point(728, 698);
+            this.labelPassword.Location = new System.Drawing.Point(720, 752);
             this.labelPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(93, 31);
@@ -404,11 +452,12 @@
             // 
             // passwordUserBox
             // 
-            this.passwordUserBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.passwordUserBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordUserBox.BackColor = System.Drawing.SystemColors.MenuBar;
             this.passwordUserBox.Font = new System.Drawing.Font("XO Thames", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passwordUserBox.Location = new System.Drawing.Point(502, 640);
+            this.passwordUserBox.Location = new System.Drawing.Point(494, 694);
             this.passwordUserBox.MaxLength = 1000;
             this.passwordUserBox.MinimumSize = new System.Drawing.Size(365, 29);
             this.passwordUserBox.Name = "passwordUserBox";
@@ -422,7 +471,7 @@
             this.registartionBtn.AutoSize = true;
             this.registartionBtn.Font = new System.Drawing.Font("XO Thames", 10.125F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.registartionBtn.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.registartionBtn.Location = new System.Drawing.Point(637, 975);
+            this.registartionBtn.Location = new System.Drawing.Point(629, 1029);
             this.registartionBtn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.registartionBtn.Name = "registartionBtn";
             this.registartionBtn.Size = new System.Drawing.Size(244, 31);
@@ -441,7 +490,7 @@
             this.registrateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registrateBtn.Font = new System.Drawing.Font("XO Courser", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registrateBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.registrateBtn.Location = new System.Drawing.Point(598, 757);
+            this.registrateBtn.Location = new System.Drawing.Point(590, 811);
             this.registrateBtn.Name = "registrateBtn";
             this.registrateBtn.Size = new System.Drawing.Size(365, 46);
             this.registrateBtn.TabIndex = 43;
@@ -452,11 +501,12 @@
             // 
             // newUserPasswordBox
             // 
-            this.newUserPasswordBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.newUserPasswordBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.newUserPasswordBox.BackColor = System.Drawing.SystemColors.MenuBar;
             this.newUserPasswordBox.Font = new System.Drawing.Font("XO Thames", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newUserPasswordBox.Location = new System.Drawing.Point(502, 640);
+            this.newUserPasswordBox.Location = new System.Drawing.Point(494, 694);
             this.newUserPasswordBox.MaxLength = 1000;
             this.newUserPasswordBox.MinimumSize = new System.Drawing.Size(365, 29);
             this.newUserPasswordBox.Name = "newUserPasswordBox";
@@ -474,7 +524,7 @@
             this.labelLogin1.AutoSize = true;
             this.labelLogin1.Font = new System.Drawing.Font("XO Thames", 10F);
             this.labelLogin1.ForeColor = System.Drawing.Color.DarkGray;
-            this.labelLogin1.Location = new System.Drawing.Point(728, 586);
+            this.labelLogin1.Location = new System.Drawing.Point(720, 640);
             this.labelLogin1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLogin1.Name = "labelLogin1";
             this.labelLogin1.Size = new System.Drawing.Size(80, 31);
@@ -484,11 +534,12 @@
             // 
             // newUserLoginBox
             // 
-            this.newUserLoginBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.newUserLoginBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.newUserLoginBox.BackColor = System.Drawing.SystemColors.MenuBar;
             this.newUserLoginBox.Font = new System.Drawing.Font("XO Thames", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newUserLoginBox.Location = new System.Drawing.Point(489, 527);
+            this.newUserLoginBox.Location = new System.Drawing.Point(481, 581);
             this.newUserLoginBox.MaxLength = 1000;
             this.newUserLoginBox.MinimumSize = new System.Drawing.Size(365, 29);
             this.newUserLoginBox.Name = "newUserLoginBox";
@@ -502,7 +553,7 @@
             this.generarionForNewUserBtn.AutoSize = true;
             this.generarionForNewUserBtn.Font = new System.Drawing.Font("XO Thames", 10.125F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.generarionForNewUserBtn.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.generarionForNewUserBtn.Location = new System.Drawing.Point(637, 698);
+            this.generarionForNewUserBtn.Location = new System.Drawing.Point(629, 752);
             this.generarionForNewUserBtn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.generarionForNewUserBtn.Name = "generarionForNewUserBtn";
             this.generarionForNewUserBtn.Size = new System.Drawing.Size(272, 31);
@@ -528,55 +579,6 @@
             this.back_btn.MouseEnter += new System.EventHandler(this.back_btn_MouseEnter);
             this.back_btn.MouseLeave += new System.EventHandler(this.back_btn_MouseLeave);
             // 
-            // show_btn1
-            // 
-            this.show_btn1.Image = global::HomeWork__PasswordGenerator.Properties.Resources.ракрыть;
-            this.show_btn1.Location = new System.Drawing.Point(1098, 640);
-            this.show_btn1.Name = "show_btn1";
-            this.show_btn1.Size = new System.Drawing.Size(63, 54);
-            this.show_btn1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.show_btn1.TabIndex = 50;
-            this.show_btn1.TabStop = false;
-            this.show_btn1.Visible = false;
-            this.show_btn1.Click += new System.EventHandler(this.show_btn1_Click);
-            // 
-            // hide_btn1
-            // 
-            this.hide_btn1.Image = global::HomeWork__PasswordGenerator.Properties.Resources.скрыть;
-            this.hide_btn1.Location = new System.Drawing.Point(1098, 640);
-            this.hide_btn1.Name = "hide_btn1";
-            this.hide_btn1.Size = new System.Drawing.Size(63, 54);
-            this.hide_btn1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.hide_btn1.TabIndex = 49;
-            this.hide_btn1.TabStop = false;
-            this.hide_btn1.Click += new System.EventHandler(this.hide_btn1_Click);
-            // 
-            // labelHint
-            // 
-            this.labelHint.AutoSize = true;
-            this.labelHint.Font = new System.Drawing.Font("XO Thames", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelHint.Location = new System.Drawing.Point(345, 698);
-            this.labelHint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelHint.Name = "labelHint";
-            this.labelHint.Size = new System.Drawing.Size(491, 36);
-            this.labelHint.TabIndex = 46;
-            this.labelHint.Text = "Подсказка для запомниная пароля:";
-            this.labelHint.Visible = false;
-            // 
-            // hintBox
-            // 
-            this.hintBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.hintBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.hintBox.Font = new System.Drawing.Font("XO Thames", 12F);
-            this.hintBox.Location = new System.Drawing.Point(416, 737);
-            this.hintBox.Name = "hintBox";
-            this.hintBox.ReadOnly = true;
-            this.hintBox.Size = new System.Drawing.Size(805, 86);
-            this.hintBox.TabIndex = 47;
-            this.hintBox.TabStop = false;
-            this.hintBox.Text = "";
-            this.hintBox.Visible = false;
-            // 
             // back_btn1
             // 
             this.back_btn1.Image = ((System.Drawing.Image)(resources.GetObject("back_btn1.Image")));
@@ -589,6 +591,40 @@
             this.hints.SetToolTip(this.back_btn1, "Выйти");
             this.back_btn1.Visible = false;
             this.back_btn1.Click += new System.EventHandler(this.back_btn1_Click);
+            this.back_btn1.MouseEnter += new System.EventHandler(this.back_btn1_MouseEnter);
+            this.back_btn1.MouseLeave += new System.EventHandler(this.back_btn1_MouseLeave);
+            // 
+            // show_btn1
+            // 
+            this.show_btn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.show_btn1.Image = global::HomeWork__PasswordGenerator.Properties.Resources.ракрыть;
+            this.show_btn1.Location = new System.Drawing.Point(1029, 694);
+            this.show_btn1.Name = "show_btn1";
+            this.show_btn1.Size = new System.Drawing.Size(63, 54);
+            this.show_btn1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.show_btn1.TabIndex = 50;
+            this.show_btn1.TabStop = false;
+            this.show_btn1.Visible = false;
+            this.show_btn1.Click += new System.EventHandler(this.show_btn1_Click);
+            // 
+            // hide_btn1
+            // 
+            this.hide_btn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.hide_btn1.Image = global::HomeWork__PasswordGenerator.Properties.Resources.скрыть;
+            this.hide_btn1.Location = new System.Drawing.Point(1029, 694);
+            this.hide_btn1.Name = "hide_btn1";
+            this.hide_btn1.Size = new System.Drawing.Size(63, 54);
+            this.hide_btn1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.hide_btn1.TabIndex = 49;
+            this.hide_btn1.TabStop = false;
+            this.hide_btn1.Click += new System.EventHandler(this.hide_btn1_Click);
+            // 
+            // controlPanel
+            // 
+            this.controlPanel.Location = new System.Drawing.Point(1324, 1241);
+            this.controlPanel.Name = "controlPanel";
+            this.controlPanel.Size = new System.Drawing.Size(200, 100);
+            this.controlPanel.TabIndex = 52;
             // 
             // MainForm
             // 
@@ -596,11 +632,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1523, 1341);
-            this.Controls.Add(this.back_btn1);
             this.Controls.Add(this.generate_panel);
+            this.Controls.Add(this.controlPanel);
+            this.Controls.Add(this.back_btn1);
             this.Controls.Add(this.show_btn1);
             this.Controls.Add(this.hide_btn1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.upperpanel);
             this.Controls.Add(this.newUserLoginBox);
             this.Controls.Add(this.loginBox);
             this.Controls.Add(this.back_btn);
@@ -615,9 +652,11 @@
             this.Controls.Add(this.passwordUserBox);
             this.Controls.Add(this.logo_picture);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Генератор паролей";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.logo_picture)).EndInit();
             this.generate_panel.ResumeLayout(false);
             this.generate_panel.PerformLayout();
@@ -627,9 +666,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.lengthUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hide_btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.back_btn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back_btn1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.show_btn1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hide_btn1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.back_btn1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -638,43 +677,44 @@
         #endregion
 
         private System.Windows.Forms.PictureBox logo_picture;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button generate_btn;
+        private System.Windows.Forms.Panel upperpanel;
         private System.Windows.Forms.Panel generate_panel;
         private System.Windows.Forms.Label copyLabel;
         private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Button generateBtn;
-        private System.Windows.Forms.CheckBox numberCheckBox;
-        private System.Windows.Forms.CheckBox alphanumCheckBox;
-        private System.Windows.Forms.CheckBox ambiguousCheckBox;
-        private System.Windows.Forms.CheckBox similarCheckBox;
-        private System.Windows.Forms.CheckBox lowerCheckBox;
-        private System.Windows.Forms.CheckBox upperCheckBox;
         private System.Windows.Forms.Label lengthLabel;
         private System.Windows.Forms.NumericUpDown lengthUpDown;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox save_btn;
         private System.Windows.Forms.PictureBox hide_btn;
-        private System.Windows.Forms.TextBox loginBox;
-        private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.Label labelPassword;
-        private System.Windows.Forms.TextBox passwordUserBox;
-        private System.Windows.Forms.Label registartionBtn;
-        private System.Windows.Forms.Button registrateBtn;
-        private System.Windows.Forms.TextBox newUserPasswordBox;
-        private System.Windows.Forms.Label labelLogin1;
-        private System.Windows.Forms.TextBox newUserLoginBox;
-        private System.Windows.Forms.Label generarionForNewUserBtn;
-        private System.Windows.Forms.Button save_password_btn;
         private System.Windows.Forms.PictureBox copy_btn;
         private System.Windows.Forms.ToolTip hints;
-        private System.Windows.Forms.PictureBox back_btn;
         private System.Windows.Forms.PictureBox show_btn;
         private System.Windows.Forms.PictureBox show_btn1;
         private System.Windows.Forms.PictureBox hide_btn1;
         private System.Windows.Forms.Label labelHint;
         private System.Windows.Forms.RichTextBox hintBox;
         private System.Windows.Forms.PictureBox back_btn1;
+        private System.Windows.Forms.Panel controlPanel;
+        public System.Windows.Forms.CheckBox numberCheckBox;
+        public System.Windows.Forms.CheckBox alphanumCheckBox;
+        public System.Windows.Forms.CheckBox ambiguousCheckBox;
+        public System.Windows.Forms.CheckBox similarCheckBox;
+        public System.Windows.Forms.CheckBox lowerCheckBox;
+        public System.Windows.Forms.CheckBox upperCheckBox;
+        public System.Windows.Forms.Button generate_btn;
+        public System.Windows.Forms.Button registrateBtn;
+        public System.Windows.Forms.TextBox newUserPasswordBox;
+        public System.Windows.Forms.TextBox newUserLoginBox;
+        public System.Windows.Forms.Label generarionForNewUserBtn;
+        public System.Windows.Forms.Label registartionBtn;
+        public System.Windows.Forms.TextBox loginBox;
+        public System.Windows.Forms.Label labelLogin;
+        public System.Windows.Forms.TextBox passwordUserBox;
+        public System.Windows.Forms.Label labelLogin1;
+        public System.Windows.Forms.PictureBox save_btn;
+        public System.Windows.Forms.Button save_password_btn;
+        public System.Windows.Forms.PictureBox back_btn;
     }
 }
 

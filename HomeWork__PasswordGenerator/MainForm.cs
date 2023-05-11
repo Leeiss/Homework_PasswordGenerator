@@ -37,10 +37,34 @@ namespace HomeWork__PasswordGenerator
                .ToArray();
         }
        
-        private void generate_btn_Click(object sender, EventArgs e)
+        public void generate_btn_Click(object sender, EventArgs e)
         {
+            upperCheckBox.Checked = false;
+            lowerCheckBox.Checked = false;
+            numberCheckBox.Checked = false;
+            alphanumCheckBox.Checked = false;
+            similarCheckBox.Checked = false;
+            ambiguousCheckBox.Checked = false;
+
             login  = loginBox.Text;
-            
+            copy_btn.Visible = false;
+            hide_btn.Visible = false;
+            labelHint.Visible = false;
+            hintBox.Visible = false;
+            if (!registrateBtn.Visible)
+            {
+                back_btn.Visible = true;
+                save_btn.Visible = false;
+                save_password_btn.Visible = false;
+            }
+            else
+            {
+                back_btn.Visible = false;
+                save_btn.Visible = true;
+                save_password_btn.Visible = true;
+            }
+            passwordBox.Visible = false;
+
             XDocument xDoc = XDocument.Load(usersXmlFile);
 
             var user = xDoc.Root.Elements("User")
@@ -57,34 +81,35 @@ namespace HomeWork__PasswordGenerator
                     MessageBox.Show($"Добро пожаловать в приложение \"Генератор безопасных парлей\"! Вы меняли пароль более месяца назад. \nНеобходимо сменить пароль!");
                     login = loginBox.Text;
                     generate_panel.Visible = true;
-                    back_btn.Visible = true;
+                    if (!registrateBtn.Visible)
+                         back_btn.Visible = true;
                 }
                 else
                 {
                     MessageBox.Show("Добро пожаловать в приложение \"Генератор безопасных парлей\"!");
                     login = loginBox.Text;
                     generate_panel.Visible = true;
-                    back_btn.Visible = true;
+                    if (!registrateBtn.Visible)
+                        back_btn.Visible = true;
                 }
             }
             else
             {
                 MessageBox.Show("Неверный логин или пароль.");
+                back_btn.Visible = false;
             }
         }
     
         private void MainForm_Load(object sender, EventArgs e)
         {
-           
-
-            var screenWidth = Screen.PrimaryScreen.Bounds.Width;
+           var screenWidth = Screen.PrimaryScreen.Bounds.Width;
             var screenHeight = Screen.PrimaryScreen.Bounds.Height;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point((screenWidth - this.Width) / 2, (screenHeight - this.Height) / 2);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
-            int formWidth = generate_panel.Location.X + generate_panel.Width;
-            int formHeight = generate_panel.Location.Y + generate_panel.Height; 
+            int formWidth = controlPanel.Location.X + controlPanel.Width;
+            int formHeight = controlPanel.Location.Y + controlPanel.Height; 
             this.ClientSize = new Size(formWidth, formHeight); 
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
@@ -170,6 +195,7 @@ namespace HomeWork__PasswordGenerator
                     save_btn.Visible = false;
                     save_password_btn.Visible = true;
                 }
+
                 passwordBox.Visible = true;
 
                 var password = GeneratePassword(length, characterPool);
@@ -197,14 +223,14 @@ namespace HomeWork__PasswordGenerator
                 .ToArray());
         }
 
-        private string RemoveAmbiguousCharacters(string input)
+        public static string RemoveAmbiguousCharacters(string input)
         {
             return new string(input
                 .Where(c => !new[] { '{', '}', '[', ']', '(', ')', '/', '\\', '\'', '\"', '`', ',', ';', ':', '.', '<', '>' }.Contains(c))
                 .ToArray());
         }
 
-        private string GeneratePassword(int length, string characterPool)
+        public string GeneratePassword(int length, string characterPool)
         {
             bool containsAll = false;
             string password = string.Empty;
@@ -295,29 +321,23 @@ namespace HomeWork__PasswordGenerator
         }
 
         private void save_password_btn_Click(object sender, EventArgs e)
-        {
+        { 
+            back_btn1.Visible = true;
+            passwordBox.Visible = false;
+            newUserLoginBox.Visible = true;
+            save_password_btn.Visible = false;
             hide_btn.Visible = true;
             copy_btn.Visible = true;
-            if (!registrateBtn.Visible)
-            {
-                save_btn.Visible = true;
-                save_password_btn.Visible = false;
-            }
-            else
-            {
-                save_btn.Visible = false;
-                save_password_btn.Visible = true;
-            }
-            passwordBox.Visible = true;
-            registrateBtn.Visible = false;
-            newUserPasswordBox.Text = passwordBox.Text;
             generate_panel.Visible = false;
+            newUserPasswordBox.Text = passwordBox.Text;
             passwordBox.Text = string.Empty;
 
         }
 
         private void registartionBtn_Click(object sender, EventArgs e)
         {
+            newUserLoginBox.Text = string.Empty;
+            newUserPasswordBox.Text = string.Empty;
             back_btn1.Visible = true;
             generate_btn.Visible = false;
             registrateBtn.Visible = true;
@@ -331,7 +351,7 @@ namespace HomeWork__PasswordGenerator
             labelLogin.Visible = false;
             labelLogin1.Visible = true;
         }
-        private string GetHint(string password)
+        public static string GetHint(string password)
         {
             Dictionary<char, string> dictionary = new Dictionary<char, string>
             {
@@ -378,7 +398,7 @@ namespace HomeWork__PasswordGenerator
         }
 
 
-        private void registrateBtn_Click(object sender, EventArgs e)
+        public void registrateBtn_Click(object sender, EventArgs e)
         {
             if (!newUserLoginBox.Text.Equals(String.Empty) && !newUserPasswordBox.Text.Equals(String.Empty))
             {
@@ -409,6 +429,7 @@ namespace HomeWork__PasswordGenerator
                 XmlNode root = xmlDoc.SelectSingleNode("UsersInSystem");
                 root.AppendChild(newUser);
                 xmlDoc.Save(usersXmlFile);
+
                 registrateBtn.Visible = false;
                 generate_btn.Visible = true;
                 registrateBtn.Visible = false;
@@ -427,11 +448,30 @@ namespace HomeWork__PasswordGenerator
             {
                 MessageBox.Show("Заполните все поля");
             }
-
+            back_btn1.Visible = false;
         }
 
         private void generarionForNewUserBtn_Click(object sender, EventArgs e)
         {
+            upperCheckBox.Checked = false;
+            lowerCheckBox.Checked = false;
+            numberCheckBox.Checked = false;
+            alphanumCheckBox.Checked = false;
+            similarCheckBox.Checked = false;
+            ambiguousCheckBox.Checked = false;
+
+            login = loginBox.Text;
+            show_btn.Visible = false;
+            hide_btn.Visible = false;
+            copy_btn.Visible = false;
+            hide_btn.Visible = false;
+            labelHint.Visible = false;
+            hintBox.Visible = false;
+            save_btn.Visible = false;
+            passwordBox.Visible = false;
+
+            back_btn1.Visible = false;
+            back_btn.Visible = false;
             generate_panel.Visible = true;
         }
 
@@ -440,7 +480,7 @@ namespace HomeWork__PasswordGenerator
             MessageBox.Show("Сгенерируйте пароль");
         }
 
-        private void save_btn_Click(object sender, EventArgs e)
+        public void save_btn_Click(object sender, EventArgs e)
         {
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(usersXmlFile);
@@ -510,7 +550,7 @@ namespace HomeWork__PasswordGenerator
 
         private void hide_btn1_Click(object sender, EventArgs e)
         {
-            passwordBox.UseSystemPasswordChar = false;
+            newUserPasswordBox.UseSystemPasswordChar = false;
             passwordUserBox.UseSystemPasswordChar = false;
             show_btn1.Visible = true;
             hide_btn1.Visible = false;
@@ -530,6 +570,40 @@ namespace HomeWork__PasswordGenerator
             labelPassword.Visible = true;
             labelLogin.Visible = true;
             labelLogin1.Visible = false;
+        }
+
+        private void back_btn1_MouseEnter(object sender, EventArgs e)
+        {
+            back_btn1.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void back_btn1_MouseLeave(object sender, EventArgs e)
+        {
+            back_btn1.BorderStyle = BorderStyle.None;
+        }
+
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+           List<Control> elementsChangeLocation = new List<Control>
+            {
+                newUserLoginBox,
+                newUserPasswordBox,
+                labelLogin1,
+                registrateBtn,
+                generarionForNewUserBtn,
+                logo_picture,
+                registartionBtn,
+                passwordUserBox,
+                loginBox,
+                labelLogin,
+                labelPassword,
+                generate_btn
+            };
+            foreach (Control control in elementsChangeLocation)
+            {
+                control.Location = new Point(((this.ClientSize.Width - control.Width) / 2), control.Location.Y);
+
+            }
         }
     }
 }

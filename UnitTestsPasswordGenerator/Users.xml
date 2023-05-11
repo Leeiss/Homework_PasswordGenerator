@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UsersInSystem>
+  <User>
+    <login>user1</login>
+    <password>ht10Gu</password>
+    <dateOfChange>11.05.2023 15:38:56</dateOfChange>
+  </User>
+  <User>
+    <login>admin</login>
+    <password>password</password>
+    <dateOfChange>11.05.2023 18:54:38</dateOfChange>
+  </User>
+  <User>
+    <login>USER1</login>
+    <password>password</password>
+    <dateOfChange>11.05.2023 19:23:06</dateOfChange>
+  </User>
+</UsersInSystem>
