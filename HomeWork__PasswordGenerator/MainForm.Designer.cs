@@ -138,9 +138,9 @@
             this.generate_panel.Controls.Add(this.lengthUpDown);
             this.generate_panel.Controls.Add(this.passwordBox);
             this.generate_panel.Controls.Add(this.hide_btn);
-            this.generate_panel.Location = new System.Drawing.Point(0, 428);
+            this.generate_panel.Location = new System.Drawing.Point(0, 408);
             this.generate_panel.Name = "generate_panel";
-            this.generate_panel.Size = new System.Drawing.Size(1524, 910);
+            this.generate_panel.Size = new System.Drawing.Size(1524, 930);
             this.generate_panel.TabIndex = 3;
             this.generate_panel.Visible = false;
             // 
