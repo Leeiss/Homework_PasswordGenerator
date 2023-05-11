@@ -19,7 +19,7 @@ _____
 <br>
 
  <p align="center">
-  <img src="https://github.com/Leeiss/Homework_PasswordGenerator/blob/master/HomeWork__PasswordGenerator/Resources/%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BE%D0%BA%D0%BD%D0%BE.png" alt="Основное окно" width="600"/>
+  <img src="https://github.com/Leeiss/Homework_PasswordGenerator/blob/master/HomeWork__PasswordGenerator/Resources/%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BE%D0%BA%D0%BD%D0%BE.png" alt="Основное окно" width="700"/>
 </p>
 
     
