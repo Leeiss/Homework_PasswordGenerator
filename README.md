@@ -19,7 +19,7 @@ _____
 <br>
 
  <p align="center">
-  <img src="https://github.com/Leeiss/Homework_PasswordGenerator/blob/master/HomeWork__PasswordGenerator/Resources/%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BE%D0%BA%D0%BD%D0%BE.png" alt="Основное окно" width="800"/>
+  <img src="https://github.com/Leeiss/Homework_PasswordGenerator/blob/master/HomeWork__PasswordGenerator/Resources/%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BE%D0%BA%D0%BD%D0%BE.png" alt="Основное окно" width="600"/>
 </p>
 
     
@@ -37,11 +37,11 @@ ________
 ### Главное окно 
 
 + Чтобы сгенерировать пароля, пользователю нужно выбрать нужные характеристики для пароля: длину; содержание строчных, прописных букв, цифр, не буквенно-цифровых символов; исключению подобных и однозначных символов.    
-После генерации пользователь может скопировать сгенерированный пароль, скрыть/раскрыть содержимое в ячейке пароля, сохранить (изменить) пароль.
-Также после генерации пароля выходит предложение для запоминания пароля.         
+После генерации пользователь может скопировать сгенерированный пароль, скрыть/раскрыть содержимое в ячейке пароля, сохранить (изменить) пароль.    
+Также после генерации пароля пользователю выходит предложение для запоминания пароля.         
    
 > Сохранение пароля
-<img src="https://github.com/Leeiss/Homework_PasswordGenerator/blob/master/HomeWork__PasswordGenerator/Resources/%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8F.png" alt="Основное окно" width="600"/>  
+<img src="https://github.com/Leeiss/Homework_PasswordGenerator/blob/master/HomeWork__PasswordGenerator/Resources/%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8F.png" alt="Основное окно" width="500"/>  
 
    
 _____
